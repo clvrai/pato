@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <title>Assisted Teleoperation for Scalable Robot Data Collection</title>
+
+    <meta charset="UTF-8">
+    <meta property="og:title" content="Assisted Teleoperation for Scalable Robot Data Collection">
+    <meta property="og:description" content="Assisted Teleoperation for Scalable Robot Data Collection">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    <meta name="viewport" content="width=device-width, initial-scale=1 minimum-scale=1.0">
+
+    <link rel="icon" type="image/png" href="img/favicon-32x32.png">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100, 100i,300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- Showdown -->
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+    <script src="js/figure-extension.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <!-- WAVE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Slick -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <link rel="stylesheet" href="theme.css">
+
+    <script>
+        const classMap = {
+            ul: 'browser-default'
+        }
+
+        const bindings = Object.keys(classMap)
+        .map(key => ({
+            type: 'output',
+            regex: new RegExp(`<${key}(.*)>`, 'g'),
+            replace: `<${key} class="${classMap[key]}" $1>`
+        }));
+
+        const converter = new showdown.Converter({
+            extensions: [bindings, 'figure']
+        });
+        converter.setOption('parseImgDimensions', true);
+        converter.setOption('tables', true);
+        converter.setFlavor('github');
+
+        $("#markdown-body").ready(() => {
+            $.get( "content.md", (data) => {
+                const content_html = converter.makeHtml(data);
+                $("#markdown-body").html(content_html);
+            });
+        });
+
+    </script>
+
+    <body>
+        <!-- Header -->
+        <!-- Wide screen -->
+        <header class="hd-container w3-container hide-narrow content-center">
+            <div class="w3-cell-row" style="width: 90%; margin: auto; max-width: 1600px; margin-top: 80px; margin-bottom: 40px">
+                <div class="w3-container w3-cell w3-cell-middle">
+                    <div class="title">Assisted Teleoperation for Scalable Robot Data Collection </div>
+                    <!-- Author -->
+                <div class="w3-row-padding">
+                    <div class="authorship-container">
+                        <ul class="horizontal-list">
+                            <li><a href="https://shivindass.github.io" target="_blank"><i class="far fa-user"></i> Shivin Dass*<sup>1</sup></a></li>
+                            <li><a href="https://kpertsch.github.io/" target="_blank"><i class="far fa-user"></i> Karl Pertsch*<sup>1</sup></a></li>
+                            <li><a href="https://www.hejiazhang.me/" target="_blank"><i class="far fa-user"></i> Hejia Zhang<sup>1</sup></a></li>
+                            <li><a href="https://youngwoon.github.io" target="_blank"><i class="far fa-user"></i> Youngwoon Lee<sup>1</sup></a></li>
+                            <li><a href="https://clvrai.com/web_lim/" target="_blank"><i class="far fa-user"></i> Joseph J. Lim<sup>2,3</sup> </a></li>
+                            <li><a href="https://stefanosnikolaidis.net/" target="_blank"><i class="far fa-user"></i> Stefanos Nikolaidis<sup>1</sup></a></li>                        
+                        </ul>
+                        <ul class="horizontal-list">
+                            <li><i class="fas fa-university"></i> USC<sup>1</sup></li>
+                            <li><i class="fas fa-university"></i> KAIST<sup>2</sup></li>
+                            <li><i class="fas fa-building"></i> NAVER AI Lab<sup>3</sup></li>
+                        </ul>
+                    </div>
+                    </div>
+                    <div class="excerpt w3-padding-16" style="width: 80%; max-width: 700px; margin: auto;">
+                        Large-scale data is an essential component of machine learning as demonstrated in recent advances in natural language processing and computer vision research. However, collecting large-scale robotic data is much more expensive and slower as each operator can control only a single robot at a time. To make this costly data collection process efficient and scalable, we propose a novel assisted teleoperation system, which automates part of the demonstration collection process using a learned assistive policy. The assistive policy autonomously executes repetitive behaviors in data collection and asks for human input only when it is uncertain about which subtask or behavior to execute. We conduct teleoperation user studies both with a real robot and a simulated robot fleet and demonstrate that our assisted teleoperation system reduces human operators' mental load while improving data collection efficiency. Further, it enables a single operator to control multiple robots in parallel, which is a first step towards scalable robotic data collection.
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Narrow screen -->
+        <header class="hd-container w3-container hide-wide">
+            <div class="w3-row-padding w3-center w3-padding-24">
+                <span class="title">Assisted Teleoperation for Scalable Robot Data Collection</span>
+            </div>
+            <div class="w3-row-padding">
+                <!-- Author -->
+                <div class="authorship-container">
+                    <ul class="horizontal-list">
+                        <li><a href="https://shivindass.github.io" target="_blank"><i class="far fa-user"></i> Shivin Dass*<sup>1</sup></a></li>
+                        <li><a href="https://kpertsch.github.io/" target="_blank"><i class="far fa-user"></i> Karl Pertsch*<sup>1</sup></a></li>
+                        <li><a href="https://www.hejiazhang.me/" target="_blank"><i class="far fa-user"></i> Hejia Zhang<sup>1</sup></a></li>
+                        <li><a href="https://youngwoon.github.io" target="_blank"><i class="far fa-user"></i> Youngwoon Lee<sup>1</sup></a></li>
+                        <li><a href="https://clvrai.com/web_lim/" target="_blank"><i class="far fa-user"></i> Joseph J. Lim<sup>2,3</sup> </a></li>
+                        <li><a href="https://stefanosnikolaidis.net/" target="_blank"><i class="far fa-user"></i> Stefanos Nikolaidis<sup>1</sup></a></li>                        
+                    </ul>
+                    <ul class="horizontal-list">
+                        <li><i class="fas fa-university"></i> USC<sup>1</sup></li>
+                        <li><i class="fas fa-university"></i> KAIST<sup>2</sup></li>
+                        <li><i class="fas fa-building"></i> NAVER AI Lab<sup>3</sup></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="w3-row-padding"><hr></div>
+                <div class="w3-row-padding w3-padding-16">
+                    <div class="excerpt">
+                        Large-scale data is an essential component of machine learning as demonstrated in recent advances in natural language processing and computer vision research. However, collecting large-scale robotic data is much more expensive and slower as each operator can control only a single robot at a time. To make this costly data collection process efficient and scalable, we propose a novel assisted teleoperation system, which automates part of the demonstration collection process using a learned assistive policy. The assistive policy autonomously executes repetitive behaviors in data collection and asks for human input only when it is uncertain about which subtask or behavior to execute. We conduct teleoperation user studies both with a real robot and a simulated robot fleet and demonstrate that our assisted teleoperation system reduces human operators' mental load while improving data collection efficiency. Further, it enables a single operator to control multiple robots in parallel, which is a first step towards scalable robotic data collection.
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Body -->
+        <div class="main-body">
+            <div class="w3-container">
+                <div class="w3-content" style="max-width:1000px;">
+                    <!-- Links -->
+                    <div class="link-container">
+                        <ul class="horizontal-list">
+                            <!-- replace later -->
+                            <li><button class="w3-button waves-effect waves-light w3-card-4 grey lighten-2 w3-round-large"><i class="fas fa-file-alt"></i> <a href="https://github.com/clvrai/pato/tree/main/docs/pato_dass_et_al.pdf" target="_blank"> Paper </a></button></li>
+                            <!-- <li><button class="w3-button waves-effect waves-light w3-card-4 grey lighten-2 w3-round-large"><i class="fas fa-code"></i> <a href="https://github.com/clvrai/skimo" target="_blank"> Code </a></button></li> -->
+                            <li><button class="w3-button waves-effect waves-light w3-card-4 grey lighten-2 w3-round-large"><i class="fas fa-video"></i> <a href="https://www.youtube.com/watch?v=TRW6yrG8k-A" target="_blank"> Video </a></button></li>
+                        </ul>
+                    </div>
+                    <!-- Markdown Body -->
+                    <div id="markdown-body"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="w3-center w3-light-grey w3-padding-32 w3-small">
+            <p style="color: grey">
+                This work was supported by IITP grant (KAIST AI Graduate School) and NRF grant, funded by the Korea government. This research was also supported by the Annenberg Fellowship from USC. <br/>
+            </p>
+        </footer>
+
+    </body>
+</html>
