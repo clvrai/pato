@@ -9,7 +9,7 @@ Recently, many works have shown impressive robot learning results from diverse, 
 ----
 
 
-## Policy Assisted Teleoperation (PATO)
+## Policy Assisted TeleOperation (PATO)
 
 To model long-horizon, multi-task data, we propose using a hierarchical policy with a subgoal predicted and a low-level subgoal reaching policy.
 * <b> Subgoal predictor</b>: We train the subgoal predictor as a conditional variational auto-encoder over subgoals. Given a prior dataset of trajectories, we sample a state <b>s<sub>t</sub></b> and predict the subgoal <b>s<sub>t+H</sub></b> H steps in the future.
@@ -20,7 +20,7 @@ To model long-horizon, multi-task data, we propose using a hierarchical policy w
 ----
 
 
-## Deciding When to Request User Input
+## Requesting User Input
 
 A policy should request help when it is uncertain about what action to take next. This can occur when (1) the policy faces a novel situation that is not present in the training data - <b>policy uncertainty</b> (2) the policy faces a seen situation, but the there are multiple possible continuations and the policy is not sure which one to pick - <b>task uncertainty</b>.
 ![Visualization of our assistive teleoperation policy on a task from the real-robot user study: "place red block in bowl; place bowl on plate; put green block in oven". The policy autonomously executes familiar behaviors, but asks for user input in frames (2) and (4) to determine where to place bowl and green block (white vs. yellow arrow). In these cases, the task uncertainty surpasses the threshold ω since the subgoal predictor produces subgoals for both possible targets. Further, the policy asks for user input in frame (3) since the required transition between placing the bowl and picking up the green block was not part of its training data. Thus, the policy uncertainty estimate surpasses its threshold γ.](./img/quali_figure.png)
